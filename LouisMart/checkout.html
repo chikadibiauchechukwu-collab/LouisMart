@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Secure checkout at Louis Mart. Pay via card, mobile transfer to 08107620605, or email transfer."
+    />
+    <title>Checkout | Louis Mart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "rich-black": "#0A0A0A",
+              "deep-navy": "#0F1B2D",
+              "electric-blue": "#2563EB",
+              "premium-gold": "#C8A951",
+              "gold-light": "#E8D5A3",
+              "gold-dark": "#A8893A",
+              "soft-white": "#F8F9FA",
+              "warm-gray": "#9CA3AF",
+              "cool-gray": "#6B7280",
+              charcoal: "#1F2937",
+              "dark-charcoal": "#111827",
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+              display: ["Playfair Display", "Georgia", "serif"],
+              grotesk: ["Space Grotesk", "Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+            </script>
+            <link rel="stylesheet" href="css/style.css" />
+          </head>
+          <body class="bg-rich-black text-soft-white font-sans antialiased">
+            <a
+              href="#main-content"
+              class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-electric-blue focus:text-white focus:px-6 focus:py-3 focus:rounded-full focus:font-semibold"
+              >Skip to main content</a
+            >
+
+            <!-- Navigation -->
+            <header
+              class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+              id="navbar"
+            >
+              <div class="bg-rich-black/80 backdrop-blur-xl border-b border-white/5">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="flex items-center justify-between h-16 lg:h-20">
+                    <a href="index.html" class="flex items-center gap-2 group"
+                      ><div
+                        class="w-10 h-10 bg-gradient-to-br from-premium-gold to-gold-dark rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-500"
+                      >
+                        <i class="fa-solid fa-crown text-rich-black"></i>
+                      </div>
+                      <span
+                        class="text-xl lg:text-2xl font-display font-bold tracking-tight"
+                        >Louis <span class="text-premium-gold">Mart</span></span
+                      ></a
+                    >
+                    <nav class="hidden lg:flex items-center gap-1">
+                      <a
+                        href="index.html"
+                        class="nav-link px-5 py-2.5 text-sm font-medium rounded-full text-warm-gray hover:text-white hover:bg-white/5 transition-all"
+                        >Home</a
+                      >
+                      <a
+                        href="shop.html"
+                        class="nav-link px-5 py-2.5 text-sm font-medium rounded-full text-warm-gray hover:text-white hover:bg-white/5 transition-all"
+                        >Shop</a
+                      >
+                      <a
+                        href="product.html"
+                        class="nav-link px-5 py-2.5 text-sm font-medium rounded-full text-warm-gray hover:text-white hover:bg-white/5 transition-all"
+                        >Product</a
+                      >
+                      <a
+                        href="contact.html"
+                        class="nav-link px-5 py-2.5 text-sm font-medium rounded-full text-warm-gray hover:text-white hover:bg-white/5 transition-all"
+                        >Contact</a
+                      >
+                    </nav>
+                    <div class="flex items-center gap-2">
+                      <button
+                        class="p-2.5 text-warm-gray hover:text-white transition-colors duration-300 relative cart-trigger"
+                        aria-label="Cart"
+                      >
+                        <i class="fa-solid fa-bag-shopping text-lg"></i>
+                        <span
+                          class="absolute -top-0.5 -right-0.5 w-5 h-5 bg-electric-blue text-white text-[9px] font-bold rounded-full flex items-center justify-center cart-count"
+                          >0</span
+                        >
+                      </button>
+                      <button
+                        class="lg:hidden p-2.5 text-white hover:text-premium-gold transition-colors duration-300 ml-1"
+                        id="mobileMenuBtn"
+                        aria-label="Menu"
+                      >
+                        <i class="fa-solid fa-bars text-xl"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="mobile-menu hidden lg:hidden bg-rich-black/98 backdrop-blur-xl border-b border-white/10"
+                id="mobileMenu"
+              >
+                <nav class="px-4 py-6 space-y-2">
+                  <a
+                    href="index.html"
+                    class="block px-5 py-3.5 text-base font-medium text-warm-gray hover:text-white hover:bg-white/5 rounded-2xl"
+                    >Home</a
+                  ><a
+                    href="shop.html"
+                    class="block px-5 py-3.5 text-base font-medium text-warm-gray hover:text-white hover:bg-white/5 rounded-2xl"
+                    >Shop</a
+                  ><a
+                    href="product.html"
+                    class="block px-5 py-3.5 text-base font-medium text-warm-gray hover:text-white hover:bg-white/5 rounded-2xl"
+                    >Product</a
+                  ><a
+                    href="contact.html"
+                    class="block px-5 py-3.5 text-base font-medium text-warm-gray hover:text-white hover:bg-white/5 rounded-2xl"
+                    >Contact</a
+                  >
+                  <div class="pt-3 border-t border-white/10 mt-3">
+                    <a
+                      href="cart.html"
+                      class="flex items-center gap-3 px-5 py-3 text-warm-gray hover:text-white"
+                      ><i class="fa-solid fa-bag-shopping text-premium-gold"></i> Cart
+                      <span
+                        class="cart-count ml-auto bg-electric-blue text-white text-xs px-2 py-0.5 rounded-full"
+                        >0</span
+                      ></a
+                    >
+                  </div>
+                </nav>
+              </div>
+            </header>
+
+            <main id="main-content">
+              <section class="pt-24 lg:pt-32 pb-12">
+                <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <h1
+                    class="text-4xl sm:text-5xl font-display font-bold text-white mb-12 text-center"
+                  >
+                    Secure <span class="text-premium-gold">Checkout</span>
+                  </h1>
+                  <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                      <div
+                        class="bg-white/[0.02] border border-white/[0.06] rounded-3xl p-8"
+                      >
+                        <h2 class="text-2xl font-display font-bold text-white mb-6">
+                          Payment Details
+                        </h2>
+                        <form id="paymentForm" class="space-y-5">
+                          <div>
+                            <label class="block text-sm font-medium text-warm-gray mb-3"
+                              >Payment Method</label
+                            >
+                            <div class="grid grid-cols-3 gap-3">
+                              <label
+                                class="flex items-center p-3 bg-white/5 border border-white/10 rounded-xl cursor-pointer hover:border-premium-gold transition-all"
+                              >
+                                <input
+                                  type="radio"
+                                  name="paymentMethod"
+                                  value="card"
+                                  checked
+                                  class="sr-only peer"
+                                />
+                                <div
+                                  class="w-5 h-5 border-2 border-warm-gray rounded-full mr-2 flex items-center justify-center peer-checked:border-premium-gold peer-checked:bg-premium-gold"
+                                >
+                                  <div
+                                    class="w-2 h-2 bg-rich-black rounded-full hidden peer-checked:block"
+                                  ></div>
+                                </div>
+                                <i class="fa-regular fa-credit-card mr-2"></i
+                                ><span class="text-white text-sm">Card</span>
+                              </label>
+                              <label
+                                class="flex items-center p-3 bg-white/5 border border-white/10 rounded-xl cursor-pointer hover:border-premium-gold transition-all"
+                              >
+                                <input
+                                  type="radio"
+                                  name="paymentMethod"
+                                  value="mobile"
+                                  class="sr-only peer"
+                                />
+                                <div
+                                  class="w-5 h-5 border-2 border-warm-gray rounded-full mr-2 flex items-center justify-center peer-checked:border-premium-gold peer-checked:bg-premium-gold"
+                                >
+                                  <div
+                                    class="w-2 h-2 bg-rich-black rounded-full hidden peer-checked:block"
+                                  ></div>
+                                </div>
+                                <i class="fa-solid fa-mobile-screen-button mr-2"></i
+                                ><span class="text-white text-sm">Mobile</span>
+                              </label>
+                              <label
+                                class="flex items-center p-3 bg-white/5 border border-white/10 rounded-xl cursor-pointer hover:border-premium-gold transition-all"
+                              >
+                                <input
+                                  type="radio"
+                                  name="paymentMethod"
+                                  value="email"
+                                  class="sr-only peer"
+                                />
+                                <div
+                                  class="w-5 h-5 border-2 border-warm-gray rounded-full mr-2 flex items-center justify-center peer-checked:border-premium-gold peer-checked:bg-premium-gold"
+                                >
+                                  <div
+                                    class="w-2 h-2 bg-rich-black rounded-full hidden peer-checked:block"
+                                  ></div>
+                                </div>
+                                <i class="fa-solid fa-envelope mr-2"></i
+                                ><span class="text-white text-sm">Email</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div id="cardFields">
+                            <input
+                              type="text"
+                              placeholder="Card Number"
+                              maxlength="19"
+                              class="w-full px-5 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-cool-gray focus:outline-none focus:border-premium-gold transition-all mb-3"
+                            />
+                            <div class="grid grid-cols-2 gap-3">
+                              <input
+                                type="text"
+                                placeholder="MM/YY"
+                                maxlength="5"
+                                class="w-full px-5 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-cool-gray focus:outline-none focus:border-premium-gold transition-all"
+                              />
+                              <input
+                                type="text"
+                                placeholder="CVC"
+                                maxlength="3"
+                                class="w-full px-5 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-cool-gray focus:outline-none focus:border-premium-gold transition-all"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            id="mobileFields"
+                            class="hidden p-5 bg-white/[0.03] border border-white/[0.05] rounded-2xl"
+                          >
+                            <h3 class="text-white font-semibold mb-2">Transfer to:</h3>
+                            <div
+                              class="flex justify-between items-center p-4 bg-white/5 rounded-lg"
+                            >
+                              <div>
+                                <span class="text-white font-medium">08107620605</span>
+                                <p class="text-cool-gray text-sm">
+                                  Louis Mart Enterprises
+                                </p>
+                              </div>
+                              <button
+                                type="button"
+                                class="text-premium-gold hover:text-gold-light text-sm copy-btn"
+                                data-details="08107620605"
+                              >
+                                Copy
+                              </button>
+                            </div>
+                          </div>
+                          <div
+                            id="emailFields"
+                            class="hidden p-5 bg-white/[0.03] border border-white/[0.05] rounded-2xl"
+                          >
+                            <h3 class="text-white font-semibold mb-2">
+                              Pay via Email:
+                            </h3>
+                            <div
+                              class="flex justify-between items-center p-4 bg-white/5 rounded-lg"
+                            >
+                              <div>
+                                <span class="text-white font-medium text-sm break-all"
+                                  >Chikadibiauchechukwu@gmail.com</span
+                                >
+                              </div>
+                              <button
+                                type="button"
+                                class="text-premium-gold hover:text-gold-light text-sm copy-btn"
+                                data-details="Chikadibiauchechukwu@gmail.com"
+                              >
+                                Copy
+                              </button>
+                            </div>
+                          </div>
+                          <div class="border-t border-white/10 pt-5">
+                            <h3 class="text-lg font-display font-bold text-white mb-4">
+                              Billing Address
+                            </h3>
+                            <div class="grid sm:grid-cols-2 gap-3">
+                              <input
+                                type="text"
+                                placeholder="First Name"
+                                required
+                                class="px-5 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-cool-gray focus:outline-none focus:border-premium-gold transition-all"
+                              />
+                              <input
+                                type="text"
+                                placeholder="Last Name"
+                                required
+                                class="px-5 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-cool-gray focus:outline-none focus:border-premium-gold transition-all"
+                              />
+                              <input
+                                type="email"
+                                placeholder="Email"
+                                required
+                                class="sm:col-span-2 px-5 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-cool-gray focus:outline-none focus:border-premium-gold transition-all"
+                              />
+                              <input
+                                type="text"
+                                placeholder="Address"
+                                required
+                                class="sm:col-span-2 px-5 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-cool-gray focus:outline-none focus:border-premium-gold transition-all"
+                              />
+                              <input
+                                type="text"
+                                placeholder="City"
+                                required
+                                class="px-5 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-cool-gray focus:outline-none focus:border-premium-gold transition-all"
+                              />
+                              <input
+                                type="text"
+                                placeholder="State"
+                                required
+                                class="px-5 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-cool-gray focus:outline-none focus:border-premium-gold transition-all"
+                              />
+                            </div>
+                          </div>
+                          <button
+                            type="submit"
+                            id="payButton"
+                            class="w-full py-4 bg-premium-gold text-rich-black font-semibold rounded-full hover:bg-gold-light transition-all text-lg"
+                          >
+                            <i class="fa-solid fa-lock mr-2"></i> Pay Now
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="lg:col-span-1">
+                      <div
+                        class="bg-white/[0.02] border border-white/[0.06] rounded-3xl p-6 sticky top-24"
+                      >
+                        <h3 class="text-lg font-display font-bold text-white mb-5">
+                          Order Summary
+                        </h3>
+                        <div
+                          id="checkoutItems"
+                          class="space-y-3 mb-5 max-h-60 overflow-y-auto text-sm"
+                        ></div>
+                        <div class="border-t border-white/10 pt-4 space-y-2 text-sm">
+                          <div class="flex justify-between text-warm-gray">
+                            <span>Subtotal</span
+                            ><span id="checkoutSubtotal" class="text-white">₦0</span>
+                          </div>
+                          <div class="flex justify-between text-warm-gray">
+                            <span>Shipping</span
+                            ><span class="text-green-400">Free</span>
+                          </div>
+                          <div
+                            class="border-t border-white/10 pt-3 flex justify-between font-semibold"
+                          >
+                            <span class="text-white">Total</span
+                            ><span id="checkoutTotal" class="text-premium-gold text-lg"
+                              >₦0</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </main>
+
+            <!-- Omo Modal -->
+            <div
+              id="omoModal"
+              class="fixed inset-0 z-[200] flex items-center justify-center bg-rich-black/90 backdrop-blur-sm hidden"
+            >
+              <div
+                class="bg-deep-navy border border-premium-gold/30 rounded-3xl p-8 max-w-md w-full mx-4 text-center transform scale-90 transition-transform duration-300"
+                id="omoModalContent"
+              >
+                <div class="text-6xl mb-4">😩💸</div>
+                <h2 class="text-3xl font-display font-bold text-white mb-4">
+                  Omo country hard!
+                </h2>
+                <p class="text-warm-gray mb-6">But we go manage am. Confirm payment?</p>
+                <div class="flex gap-3 justify-center">
+                  <button
+                    id="omoCancel"
+                    class="px-6 py-3 bg-white/5 border border-white/10 rounded-full text-white hover:bg-white/10 transition-all"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    id="omoConfirm"
+                    class="px-6 py-3 bg-premium-gold text-rich-black font-semibold rounded-full hover:bg-gold-light transition-all"
+                  >
+                    Confirm Payment
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <footer class="bg-dark-charcoal border-t border-white/5 pt-16 pb-8">
+              <div class="max-w-7xl mx-auto px-4 text-center">
+                <p class="text-sm text-cool-gray">
+                  &copy; 2026 Louis Mart. All rights reserved.
+                </p>
+              </div>
+            </footer>
+            <button
+              id="backToTop"
+              class="fixed bottom-6 right-6 z-50 w-11 h-11 bg-premium-gold text-rich-black rounded-full flex items-center justify-center shadow-xl hover:bg-gold-light hover:scale-110 transition-all duration-300 opacity-0 translate-y-4 pointer-events-none"
+              aria-label="Back to top"
+            >
+              <i class="fa-solid fa-arrow-up"></i>
+            </button>
+
+            <script src="js/script.js"></script>
+            <script>
+              // Render checkout items
+              (function () {
+                const cart = JSON.parse(
+                  localStorage.getItem("louis_mart_cart") || "[]",
+                );
+                if (!cart.length) {
+                  window.location.href = "cart.html";
+                  return;
+                }
+                document.getElementById("checkoutItems").innerHTML = cart
+                  .map(
+                    (i) =>
+                      `<div class="flex justify-between items-center"><div class="flex items-center gap-2"><img src="${i.image}" class="w-10 h-10 rounded-lg object-cover"><div><span class="text-white">${i.name}</span><span class="text-cool-gray ml-1">x${i.quantity || 1}</span></div></div><span class="text-white">₦${((i.price || 0) * (i.quantity || 1)).toLocaleString()}</span></div>`,
+                  )
+                  .join("");
+                const t = cart.reduce(
+                  (s, i) => s + (i.price || 0) * (i.quantity || 1),
+                  0,
+                );
+                document.getElementById("checkoutSubtotal").textContent =
+                  `₦${t.toLocaleString()}`;
+                document.getElementById("checkoutTotal").textContent =
+                  `₦${t.toLocaleString()}`;
+              })();
+              // Payment method switch
+              document.querySelectorAll('input[name="paymentMethod"]').forEach((r) =>
+                r.addEventListener("change", () => {
+                  document
+                    .getElementById("cardFields")
+                    .classList.toggle("hidden", r.value !== "card");
+                  document
+                    .getElementById("mobileFields")
+                    .classList.toggle("hidden", r.value !== "mobile");
+                  document
+                    .getElementById("emailFields")
+                    .classList.toggle("hidden", r.value !== "email");
+                }),
+              );
+              // Copy
+              document.querySelectorAll(".copy-btn").forEach((b) =>
+                b.addEventListener("click", () => {
+                  navigator.clipboard.writeText(b.dataset.details).then(() => {
+                    b.textContent = "Copied!";
+                    setTimeout(() => (b.textContent = "Copy"), 2000);
+                  });
+                }),
+              );
+              // Payment form
+              document
+                .getElementById("paymentForm")
+                .addEventListener("submit", function (e) {
+                  e.preventDefault();
+                  document.getElementById("omoModal").classList.remove("hidden");
+                  setTimeout(
+                    () =>
+                      document
+                        .getElementById("omoModalContent")
+                        .classList.remove("scale-90"),
+                    10,
+                  );
+                  document.getElementById("omoCancel").onclick = () => {
+                    document
+                      .getElementById("omoModalContent")
+                      .classList.add("scale-90");
+                    setTimeout(
+                      () => document.getElementById("omoModal").classList.add("hidden"),
+                      300,
+                    );
+                  };
+                  document.getElementById("omoConfirm").onclick = () => {
+                    document
+                      .getElementById("omoModalContent")
+                      .classList.add("scale-90");
+                    setTimeout(
+                      () => document.getElementById("omoModal").classList.add("hidden"),
+                      300,
+                    );
+                    const btn = document.getElementById("payButton");
+                    btn.innerHTML =
+                      '<i class="fa-solid fa-spinner fa-spin"></i> Processing...';
+                    btn.disabled = true;
+                    setTimeout(() => {
+                      localStorage.removeItem("louis_mart_cart");
+                      alert("Payment successful! Thank you for your order.");
+                      window.location.href = "index.html";
+                    }, 2000);
+                  };
+                });
+            </script>
+          </body>
+        </html>

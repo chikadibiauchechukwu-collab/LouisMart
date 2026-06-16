@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Shop premium sneakers at Louis Mart. Browse Nike, Adidas, Jordan & more. Fast delivery across Nigeria."
+    />
+    <title>Shop | Louis Mart - Premium Sneakers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "rich-black": "#0A0A0A",
+              "deep-navy": "#0F1B2D",
+              "electric-blue": "#2563EB",
+              "premium-gold": "#C8A951",
+              "gold-light": "#E8D5A3",
+              "gold-dark": "#A8893A",
+              "soft-white": "#F8F9FA",
+              "warm-gray": "#9CA3AF",
+              "cool-gray": "#6B7280",
+              charcoal: "#1F2937",
+              "dark-charcoal": "#111827",
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+              display: ["Playfair Display", "Georgia", "serif"],
+              grotesk: ["Space Grotesk", "Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-rich-black text-soft-white font-sans antialiased">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-electric-blue focus:text-white focus:px-6 focus:py-3 focus:rounded-full focus:font-semibold"
+      >Skip to main content</a
+    >
+
+    <!-- Navigation -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+      id="navbar"
+    >
+      <div class="bg-rich-black/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-16 lg:h-20">
+            <a href="index.html" class="flex items-center gap-2 group">
+              <div
+                class="w-10 h-10 bg-gradient-to-br from-premium-gold to-gold-dark rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-500 shadow-lg shadow-premium-gold/20"
+              >
+                <i class="fa-solid fa-crown text-rich-black"></i>
+              </div>
+              <span
+                class="text-xl lg:text-2xl font-display font-bold tracking-tight"
+                >Louis <span class="text-premium-gold">Mart</span></span
+              >
+            </a>
+            <nav class="hidden lg:flex items-center gap-1">
+              <a
+                href="index.html"
+                class="nav-link px-5 py-2.5 text-sm font-medium rounded-full text-warm-gray hover:text-white hover:bg-white/5 transition-all duration-300"
+                >Home</a
+              >
+              <a
+                href="shop.html"
+                class="nav-link px-5 py-2.5 text-sm font-medium rounded-full bg-premium-gold/10 text-premium-gold"
+                >Shop</a
+              >
+              <a
+                href="product.html"
+                class="nav-link px-5 py-2.5 text-sm font-medium rounded-full text-warm-gray hover:text-white hover:bg-white/5 transition-all duration-300"
+                >Product</a
+              >
+              <a
+                href="contact.html"
+                class="nav-link px-5 py-2.5 text-sm font-medium rounded-full text-warm-gray hover:text-white hover:bg-white/5 transition-all duration-300"
+                >Contact</a
+              >
+            </nav>
+            <div class="flex items-center gap-2">
+              <button
+                class="p-2.5 text-warm-gray hover:text-white transition-colors duration-300 relative wishlist-btn"
+                aria-label="Wishlist"
+              >
+                <i class="fa-regular fa-heart text-lg"></i>
+                <span
+                  class="absolute -top-0.5 -right-0.5 w-4 h-4 bg-premium-gold text-rich-black text-[9px] font-bold rounded-full flex items-center justify-center wishlist-count"
+                  >0</span
+                >
+              </button>
+              <button
+                class="p-2.5 text-warm-gray hover:text-white transition-colors duration-300 relative cart-trigger"
+                aria-label="Cart"
+              >
+                <i class="fa-solid fa-bag-shopping text-lg"></i>
+                <span
+                  class="absolute -top-0.5 -right-0.5 w-5 h-5 bg-electric-blue text-white text-[9px] font-bold rounded-full flex items-center justify-center cart-count"
+                  >0</span
+                >
+              </button>
+              <button
+                class="lg:hidden p-2.5 text-white hover:text-premium-gold transition-colors duration-300 ml-1"
+                id="mobileMenuBtn"
+                aria-label="Menu"
+                aria-expanded="false"
+              >
+                <i class="fa-solid fa-bars text-xl"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mobile-menu hidden lg:hidden bg-rich-black/98 backdrop-blur-xl border-b border-white/10"
+        id="mobileMenu"
+      >
+        <nav class="px-4 py-6 space-y-2">
+          <a
+            href="index.html"
+            class="block px-5 py-3.5 text-base font-medium text-warm-gray hover:text-white hover:bg-white/5 rounded-2xl transition-all"
+            >Home</a
+          >
+          <a
+            href="shop.html"
+            class="block px-5 py-3.5 text-base font-medium bg-premium-gold/10 text-premium-gold rounded-2xl"
+            >Shop</a
+          >
+          <a
+            href="product.html"
+            class="block px-5 py-3.5 text-base font-medium text-warm-gray hover:text-white hover:bg-white/5 rounded-2xl transition-all"
+            >Product</a
+          >
+          <a
+            href="contact.html"
+            class="block px-5 py-3.5 text-base font-medium text-warm-gray hover:text-white hover:bg-white/5 rounded-2xl transition-all"
+            >Contact</a
+          >
+          <div class="pt-3 border-t border-white/10 mt-3">
+            <a
+              href="cart.html"
+              class="flex items-center gap-3 px-5 py-3 text-warm-gray hover:text-white transition-colors"
+            >
+              <i class="fa-solid fa-bag-shopping text-premium-gold"></i> View
+              Cart
+              <span
+                class="cart-count ml-auto bg-electric-blue text-white text-xs px-2 py-0.5 rounded-full"
+                >0</span
+              >
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- Page Header -->
+      <section class="pt-24 lg:pt-32 pb-12 bg-dark-charcoal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <span
+            class="inline-block px-4 py-1.5 bg-premium-gold/10 text-premium-gold text-xs font-semibold uppercase tracking-widest rounded-full mb-4"
+            >Our Store</span
+          >
+          <h1
+            class="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white mb-4"
+          >
+            Shop <span class="text-premium-gold">Sneakers</span>
+          </h1>
+          <p class="text-warm-gray max-w-xl mx-auto">
+            Browse our complete collection of premium, authentic sneakers.
+          </p>
+        </div>
+      </section>
+
+      <!-- Filters & Products -->
+      <section class="py-12 lg:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <!-- Search & Filters -->
+          <div class="flex flex-col lg:flex-row gap-4 mb-8">
+            <div class="flex-1 relative">
+              <i
+                class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-warm-gray"
+              ></i>
+              <input
+                type="search"
+                id="shopSearch"
+                placeholder="Search sneakers..."
+                class="w-full pl-12 pr-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white placeholder-warm-gray focus:outline-none focus:border-premium-gold transition-all"
+              />
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <select
+                id="categoryFilter"
+                class="px-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-premium-gold cursor-pointer"
+              >
+                <option value="all" class="bg-rich-black">
+                  All Categories
+                </option>
+                <option value="basketball" class="bg-rich-black">
+                  Basketball
+                </option>
+                <option value="running" class="bg-rich-black">Running</option>
+                <option value="lifestyle" class="bg-rich-black">
+                  Lifestyle
+                </option>
+              </select>
+              <select
+                id="brandFilter"
+                class="px-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-premium-gold cursor-pointer"
+              >
+                <option value="all" class="bg-rich-black">All Brands</option>
+                <option value="nike" class="bg-rich-black">Nike</option>
+                <option value="adidas" class="bg-rich-black">Adidas</option>
+                <option value="jordan" class="bg-rich-black">Jordan</option>
+                <option value="puma" class="bg-rich-black">Puma</option>
+                <option value="new-balance" class="bg-rich-black">
+                  New Balance
+                </option>
+                <option value="converse" class="bg-rich-black">Converse</option>
+              </select>
+              <select
+                id="priceFilter"
+                class="px-4 py-3.5 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:border-premium-gold cursor-pointer"
+              >
+                <option value="all" class="bg-rich-black">All Prices</option>
+                <option value="under-100k" class="bg-rich-black">
+                  Under ₦100,000
+                </option>
+                <option value="100k-200k" class="bg-rich-black">
+                  ₦100,000 - ₦200,000
+                </option>
+                <option value="over-200k" class="bg-rich-black">
+                  Over ₦200,000
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Results count -->
+          <p class="text-warm-gray mb-6">
+            Showing
+            <span id="showingCount" class="text-white font-semibold">12</span>
+            of
+            <span id="totalCount" class="text-white font-semibold">12</span>
+            products
+          </p>
+
+          <!-- Products Grid -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+            id="productsGrid"
+          ></div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-charcoal border-t border-white/5 pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+          <div class="lg:col-span-2">
+            <a href="index.html" class="flex items-center gap-2 mb-4">
+              <div
+                class="w-9 h-9 bg-gradient-to-br from-premium-gold to-gold-dark rounded-lg flex items-center justify-center"
+              >
+                <i class="fa-solid fa-crown text-rich-black text-sm"></i>
+              </div>
+              <span class="text-xl font-display font-bold text-white"
+                >Louis <span class="text-premium-gold">Mart</span></span
+              >
+            </a>
+            <p class="text-cool-gray mb-5 max-w-sm">
+              Premium sneakers in Rivers State, Nigeria.
+            </p>
+            <div class="flex gap-3">
+              <a
+                href="https:www.instagram.com/louis78836"
+                class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-warm-gray hover:bg-premium-gold hover:text-rich-black transition-all"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a
+                href="https://x.com/Chikadibia24062"
+                class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-warm-gray hover:bg-premium-gold hover:text-rich-black transition-all"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61579197715066"
+                class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-warm-gray hover:bg-premium-gold hover:text-rich-black transition-all"
+                ><i class="fa-brands fa-facebook"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-warm-gray hover:bg-premium-gold hover:text-rich-black transition-all"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2.5">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-cool-gray hover:text-premium-gold text-sm"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="shop.html"
+                  class="text-cool-gray hover:text-premium-gold text-sm"
+                  >Shop</a
+                >
+              </li>
+              <li>
+                <a
+                  href="cart.html"
+                  class="text-cool-gray hover:text-premium-gold text-sm"
+                  >Cart</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-cool-gray hover:text-premium-gold text-sm"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-4">Help</h4>
+            <ul class="space-y-2.5">
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-cool-gray hover:text-premium-gold text-sm"
+                  >Help Center</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-cool-gray hover:text-premium-gold text-sm"
+                  >Shipping</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-cool-gray hover:text-premium-gold text-sm"
+                  >Returns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-cool-gray hover:text-premium-gold text-sm"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-4">Contact</h4>
+            <ul class="space-y-2.5">
+              <li class="flex items-start gap-2 text-sm text-cool-gray">
+                <i class="fa-solid fa-location-dot text-premium-gold mt-1"></i
+                >Rivers State, Nigeria
+              </li>
+              <li class="flex items-center gap-2 text-sm text-cool-gray">
+                <i class="fa-solid fa-phone text-premium-gold"></i
+                ><a href="tel:08107620605" class="hover:text-white"
+                  >08107620605</a
+                >
+              </li>
+              <li class="flex items-center gap-2 text-sm text-cool-gray">
+                <i class="fa-solid fa-envelope text-premium-gold"></i
+                ><a
+                  href="mailto:Chikadibiauchechukwu@gmail.com"
+                  class="hover:text-white break-all"
+                  >Chikadibiauchechukwu@gmail.com</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-white/5 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3"
+        >
+          <p class="text-sm text-cool-gray">
+            &copy; 2026 Louis Mart. All rights reserved.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="text-xs text-cool-gray hover:text-white"
+              >Privacy</a
+            ><a href="#" class="text-xs text-cool-gray hover:text-white"
+              >Terms</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div id="cartOverlay" class="cart-overlay hidden"></div>
+    <div id="cartSidebar" class="cart-sidebar hidden">
+      <div class="cart-sidebar-header">
+        <h2>
+          Your Cart
+          <span
+            class="cart-count text-sm bg-electric-blue text-white px-2 py-0.5 rounded-full ml-2"
+            >0</span
+          >
+        </h2>
+        <button id="cartClose" class="cart-close" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="cart-sidebar-body" id="cartSidebarBody"></div>
+      <div class="cart-sidebar-footer">
+        <div class="flex justify-between text-white font-semibold mb-3">
+          <span>Total:</span><span id="cartSidebarTotal">₦0</span>
+        </div>
+        <a
+          href="cart.html"
+          class="block w-full py-3 bg-white/10 text-white text-center rounded-full font-semibold mb-2 hover:bg-white/20 transition-all"
+          >View Cart</a
+        >
+        <a
+          href="checkout.html"
+          class="block w-full py-3 bg-premium-gold text-rich-black text-center rounded-full font-semibold hover:bg-gold-light transition-all"
+          >Checkout</a
+        >
+      </div>
+    </div>
+
+    <button
+      id="backToTop"
+      class="fixed bottom-6 right-6 z-50 w-11 h-11 bg-premium-gold text-rich-black rounded-full flex items-center justify-center shadow-xl hover:bg-gold-light hover:scale-110 transition-all duration-300 opacity-0 translate-y-4 pointer-events-none"
+      aria-label="Back to top"
+    >
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+    <script>
+      // Shop products data and rendering
+      (function () {
+        const products = [
+          {
+            name: "Air Jordan 1 Retro High OG",
+            brand: "Nike",
+            category: "basketball",
+            price: 185000,
+            originalPrice: 220000,
+            rating: 4.7,
+            reviews: 234,
+            image:
+              "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=400&q=80",
+            badge: "New",
+            badgeColor: "premium-gold",
+          },
+          {
+            name: "Nike Air Max 90 Premium",
+            brand: "Nike",
+            category: "lifestyle",
+            price: 142000,
+            originalPrice: null,
+            rating: 4.5,
+            reviews: 189,
+            image:
+              "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80",
+            badge: "Hot",
+            badgeColor: "rose-500",
+          },
+          {
+            name: "Adidas Ultraboost 5.0 DNA",
+            brand: "Adidas",
+            category: "running",
+            price: 165000,
+            originalPrice: 195000,
+            rating: 4.8,
+            reviews: 312,
+            image:
+              "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=400&q=80",
+            badge: "Eco",
+            badgeColor: "green-500",
+          },
+          {
+            name: "Nike Air Force 1 07",
+            brand: "Nike",
+            category: "lifestyle",
+            price: 128000,
+            originalPrice: null,
+            rating: 4.6,
+            reviews: 456,
+            image:
+              "https://images.unsplash.com/photo-1491553895911-0055eca6402d?w=400&q=80",
+            badge: null,
+          },
+          {
+            name: "Air Jordan 4 Retro",
+            brand: "Jordan",
+            category: "basketball",
+            price: 210000,
+            originalPrice: 250000,
+            rating: 4.9,
+            reviews: 178,
+            image:
+              "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=400&q=80",
+            badge: "Limited",
+            badgeColor: "electric-blue",
+          },
+          {
+            name: "Puma RS-X Tech",
+            brand: "Puma",
+            category: "lifestyle",
+            price: 95000,
+            originalPrice: null,
+            rating: 4.3,
+            reviews: 145,
+            image:
+              "https://images.unsplash.com/photo-1597045566677-8cf032ed6634?w=400&q=80",
+            badge: null,
+          },
+          {
+            name: "New Balance 990v5",
+            brand: "New Balance",
+            category: "running",
+            price: 175000,
+            originalPrice: null,
+            rating: 4.7,
+            reviews: 223,
+            image:
+              "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=400&q=80",
+            badge: "Premium",
+            badgeColor: "premium-gold",
+          },
+          {
+            name: "Converse Chuck 70",
+            brand: "Converse",
+            category: "lifestyle",
+            price: 75000,
+            originalPrice: 85000,
+            rating: 4.4,
+            reviews: 567,
+            image:
+              "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80",
+            badge: null,
+          },
+          {
+            name: "Nike Dunk Low",
+            brand: "Nike",
+            category: "lifestyle",
+            price: 155000,
+            originalPrice: null,
+            rating: 4.6,
+            reviews: 389,
+            image:
+              "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=400&q=80",
+            badge: "Trending",
+            badgeColor: "rose-500",
+          },
+          {
+            name: "Adidas Forum Low",
+            brand: "Adidas",
+            category: "lifestyle",
+            price: 110000,
+            originalPrice: 130000,
+            rating: 4.5,
+            reviews: 198,
+            image:
+              "https://images.unsplash.com/photo-1552346154-21d32810aba3?w=400&q=80",
+            badge: null,
+          },
+          {
+            name: "Jordan 1 Mid SE",
+            brand: "Jordan",
+            category: "basketball",
+            price: 135000,
+            originalPrice: null,
+            rating: 4.4,
+            reviews: 267,
+            image:
+              "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80",
+            badge: "New",
+            badgeColor: "premium-gold",
+          },
+          {
+            name: "Adidas Samba OG",
+            brand: "Adidas",
+            category: "lifestyle",
+            price: 89000,
+            originalPrice: 99000,
+            rating: 4.8,
+            reviews: 412,
+            image:
+              "https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=400&q=80",
+            badge: "Classic",
+            badgeColor: "cool-gray",
+          },
+        ];
+
+        const grid = document.getElementById("productsGrid");
+        const showingCount = document.getElementById("showingCount");
+        const totalCount = document.getElementById("totalCount");
+
+        function stars(r) {
+          let s = "";
+          for (let i = 0; i < Math.floor(r); i++)
+            s += '<i class="fa-solid fa-star"></i>';
+          if (r % 1 >= 0.5) s += '<i class="fa-solid fa-star-half-stroke"></i>';
+          for (let i = 0; i < 5 - Math.floor(r) - (r % 1 >= 0.5 ? 1 : 0); i++)
+            s += '<i class="fa-regular fa-star"></i>';
+          return s;
+        }
+
+        function render(filtered) {
+          grid.innerHTML = filtered
+            .map(
+              (p) => `
+                    <div class="product-card group relative bg-white/[0.02] backdrop-blur-sm border border-white/[0.06] rounded-3xl overflow-hidden hover:border-premium-gold/20 hover:-translate-y-2 transition-all duration-500">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1552346154-21d32810aba3?w=400&q=80'">
+                            ${p.badge ? `<span class="absolute top-4 left-4 px-3 py-1 bg-${p.badgeColor || "premium-gold"} text-${p.badgeColor === "cool-gray" ? "white" : "rich-black"} text-xs font-bold rounded-full">${p.badge}</span>` : ""}
+                            <button class="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-rose-500 transition-all duration-300 wishlist-btn" aria-label="Wishlist"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <div class="p-5">
+                            <span class="text-xs text-premium-gold uppercase tracking-wider">${p.brand}</span>
+                            <h3 class="text-white font-semibold mt-1 group-hover:text-premium-gold transition-colors">${p.name}</h3>
+                            <div class="flex items-center gap-2 my-2"><span class="text-premium-gold text-xs">${stars(p.rating)}</span><span class="text-xs text-cool-gray">(${p.reviews})</span></div>
+                            <div class="flex items-center justify-between">
+                                <div><span class="text-white font-bold">₦${p.price.toLocaleString()}</span>${p.originalPrice ? `<span class="text-xs text-cool-gray line-through ml-2">₦${p.originalPrice.toLocaleString()}</span>` : ""}</div>
+                                <button class="w-9 h-9 bg-electric-blue rounded-full flex items-center justify-center text-white text-sm hover:bg-blue-600 transition-all add-to-cart-btn" aria-label="Add to cart"><i class="fa-solid fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                `,
+            )
+            .join("");
+          showingCount.textContent = filtered.length;
+          totalCount.textContent = products.length;
+        }
+
+        function filter() {
+          const s = (
+            document.getElementById("shopSearch")?.value || ""
+          ).toLowerCase();
+          const c = document.getElementById("categoryFilter")?.value || "all";
+          const b = document.getElementById("brandFilter")?.value || "all";
+          const pr = document.getElementById("priceFilter")?.value || "all";
+          let filtered = products.filter((p) => {
+            const ms =
+              p.name.toLowerCase().includes(s) ||
+              p.brand.toLowerCase().includes(s);
+            const mc = c === "all" || p.category === c;
+            const mb = b === "all" || p.brand.toLowerCase() === b;
+            let mp = true;
+            if (pr === "under-100k") mp = p.price < 100000;
+            else if (pr === "100k-200k")
+              mp = p.price >= 100000 && p.price <= 200000;
+            else if (pr === "over-200k") mp = p.price > 200000;
+            return ms && mc && mb && mp;
+          });
+          render(filtered);
+        }
+
+        render(products);
+        document
+          .getElementById("shopSearch")
+          ?.addEventListener("input", filter);
+        ["categoryFilter", "brandFilter", "priceFilter"].forEach((id) =>
+          document.getElementById(id)?.addEventListener("change", filter),
+        );
+      })();
+    </script>
+  </body>
+</html>

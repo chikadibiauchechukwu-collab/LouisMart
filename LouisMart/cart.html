@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Your shopping cart at Louis Mart. Review your selected premium sneakers before checkout."
+    />
+    <title>Your Cart | Louis Mart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "rich-black": "#0A0A0A",
+              "deep-navy": "#0F1B2D",
+              "electric-blue": "#2563EB",
+              "premium-gold": "#C8A951",
+              "gold-light": "#E8D5A3",
+              "gold-dark": "#A8893A",
+              "soft-white": "#F8F9FA",
+              "warm-gray": "#9CA3AF",
+              "cool-gray": "#6B7280",
+              charcoal: "#1F2937",
+              "dark-charcoal": "#111827",
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"],
+              display: ["Playfair Display", "Georgia", "serif"],
+              grotesk: ["Space Grotesk", "Inter", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="bg-rich-black text-soft-white font-sans antialiased">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-electric-blue focus:text-white focus:px-6 focus:py-3 focus:rounded-full focus:font-semibold"
+      >Skip to main content</a
+    >
+
+    <!-- Navigation (same as other pages) -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
+      id="navbar"
+    >
+      <div class="bg-rich-black/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-16 lg:h-20">
+            <a href="index.html" class="flex items-center gap-2 group"
+              ><div
+                class="w-10 h-10 bg-gradient-to-br from-premium-gold to-gold-dark rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-500 shadow-lg shadow-premium-gold/20"
+              >
+                <i class="fa-solid fa-crown text-rich-black"></i>
+              </div>
+              <span
+                class="text-xl lg:text-2xl font-display font-bold tracking-tight"
+                >Louis <span class="text-premium-gold">Mart</span></span
+              ></a
+            >
+            <nav class="hidden lg:flex items-center gap-1">
+              <a
+                href="index.html"
+                class="nav-link px-5 py-2.5 text-sm font-medium rounded-full text-warm-gray hover:text-white hover:bg-white/5 transition-all duration-300"
+                >Home</a
+              >
+              <a
+                href="shop.html"
+                class="nav-link px-5 py-2.5 text-sm font-medium rounded-full text-warm-gray hover:text-white hover:bg-white/5 transition-all duration-300"
+                >Shop</a
+              >
+              <a
+                href="product.html"
+                class="nav-link px-5 py-2.5 text-sm font-medium rounded-full text-warm-gray hover:text-white hover:bg-white/5 transition-all duration-300"
+                >Product</a
+              >
+              <a
+                href="contact.html"
+                class="nav-link px-5 py-2.5 text-sm font-medium rounded-full text-warm-gray hover:text-white hover:bg-white/5 transition-all duration-300"
+                >Contact</a
+              >
+            </nav>
+            <div class="flex items-center gap-2">
+              <button
+                class="p-2.5 text-premium-gold transition-colors duration-300 relative cart-trigger"
+                aria-label="Cart"
+              >
+                <i class="fa-solid fa-bag-shopping text-lg"></i>
+                <span
+                  class="absolute -top-0.5 -right-0.5 w-5 h-5 bg-electric-blue text-white text-[9px] font-bold rounded-full flex items-center justify-center cart-count"
+                  >0</span
+                >
+              </button>
+              <button
+                class="lg:hidden p-2.5 text-white hover:text-premium-gold transition-colors duration-300 ml-1"
+                id="mobileMenuBtn"
+                aria-label="Menu"
+                aria-expanded="false"
+              >
+                <i class="fa-solid fa-bars text-xl"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mobile-menu hidden lg:hidden bg-rich-black/98 backdrop-blur-xl border-b border-white/10"
+        id="mobileMenu"
+      >
+        <nav class="px-4 py-6 space-y-2">
+          <a
+            href="index.html"
+            class="block px-5 py-3.5 text-base font-medium text-warm-gray hover:text-white hover:bg-white/5 rounded-2xl transition-all"
+            >Home</a
+          >
+          <a
+            href="shop.html"
+            class="block px-5 py-3.5 text-base font-medium text-warm-gray hover:text-white hover:bg-white/5 rounded-2xl transition-all"
+            >Shop</a
+          >
+          <a
+            href="product.html"
+            class="block px-5 py-3.5 text-base font-medium text-warm-gray hover:text-white hover:bg-white/5 rounded-2xl transition-all"
+            >Product</a
+          >
+          <a
+            href="contact.html"
+            class="block px-5 py-3.5 text-base font-medium text-warm-gray hover:text-white hover:bg-white/5 rounded-2xl transition-all"
+            >Contact</a
+          >
+          <div class="pt-3 border-t border-white/10 mt-3">
+            <a
+              href="cart.html"
+              class="flex items-center gap-3 px-5 py-3 bg-premium-gold/10 text-premium-gold rounded-2xl"
+              ><i class="fa-solid fa-bag-shopping"></i> View Cart
+              <span
+                class="cart-count ml-auto bg-electric-blue text-white text-xs px-2 py-0.5 rounded-full"
+                >0</span
+              ></a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="pt-24 lg:pt-32 pb-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1
+            class="text-4xl sm:text-5xl font-display font-bold text-white mb-10 text-center"
+          >
+            Your <span class="text-premium-gold">Cart</span>
+          </h1>
+          <div id="cartPageItems" class="space-y-4 mb-8"></div>
+          <div
+            id="cartSummary"
+            class="hidden bg-white/[0.02] border border-white/[0.06] rounded-3xl p-8"
+          >
+            <div class="space-y-3 text-warm-gray mb-6">
+              <div class="flex justify-between">
+                <span>Subtotal</span
+                ><span id="cartSubtotal" class="text-white font-semibold"
+                  >₦0</span
+                >
+              </div>
+              <div class="flex justify-between">
+                <span>Shipping</span><span class="text-green-400">Free</span>
+              </div>
+              <div
+                class="border-t border-white/10 pt-3 flex justify-between text-lg"
+              >
+                <span class="text-white font-semibold">Total</span
+                ><span id="cartTotal" class="text-premium-gold font-bold"
+                  >₦0</span
+                >
+              </div>
+            </div>
+            <a
+              href="checkout.html"
+              class="block w-full py-4 bg-premium-gold text-rich-black text-center rounded-full font-semibold hover:bg-gold-light transition-all text-lg"
+              >Proceed to Checkout</a
+            >
+          </div>
+          <div id="emptyCartMsg" class="text-center py-16 hidden">
+            <i
+              class="fa-solid fa-bag-shopping text-5xl text-cool-gray mb-5 opacity-50"
+            ></i>
+            <h2 class="text-2xl font-display font-bold text-white mb-3">
+              Cart is empty
+            </h2>
+            <a
+              href="shop.html"
+              class="inline-flex items-center gap-2 px-8 py-4 bg-premium-gold text-rich-black font-semibold rounded-full hover:bg-gold-light transition-all"
+              >Start Shopping <i class="fa-solid fa-arrow-right"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-charcoal border-t border-white/5 pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+          <div class="lg:col-span-2">
+            <a href="index.html" class="flex items-center gap-2 mb-4"
+              ><div
+                class="w-9 h-9 bg-gradient-to-br from-premium-gold to-gold-dark rounded-lg flex items-center justify-center"
+              >
+                <i class="fa-solid fa-crown text-rich-black text-sm"></i>
+              </div>
+              <span class="text-xl font-display font-bold text-white"
+                >Louis <span class="text-premium-gold">Mart</span></span
+              ></a
+            >
+            <p class="text-cool-gray mb-5 max-w-sm">
+              Premium sneakers in Rivers State, Nigeria.
+            </p>
+            <div class="flex gap-3">
+              <a
+                href="https:www.instagram.com/louis78836"
+                class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-warm-gray hover:bg-premium-gold hover:text-rich-black transition-all"
+                ><i class="fa-brands fa-instagram"></i></a
+              ><a
+                href="https://x.com/Chikadibia24062"
+                class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-warm-gray hover:bg-premium-gold hover:text-rich-black transition-all"
+                ><i class="fa-brands fa-x-twitter"></i></a
+              ><a
+                href="https://www.facebook.com/profile.php?id=61579197715066"
+                class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-warm-gray hover:bg-premium-gold hover:text-rich-black transition-all"
+                ><i class="fa-brands fa-facebook"></i></a
+              ><a
+                href="#"
+                class="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-warm-gray hover:bg-premium-gold hover:text-rich-black transition-all"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2.5">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-cool-gray hover:text-premium-gold text-sm"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="shop.html"
+                  class="text-cool-gray hover:text-premium-gold text-sm"
+                  >Shop</a
+                >
+              </li>
+              <li>
+                <a
+                  href="cart.html"
+                  class="text-cool-gray hover:text-premium-gold text-sm"
+                  >Cart</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-cool-gray hover:text-premium-gold text-sm"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-4">Help</h4>
+            <ul class="space-y-2.5">
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-cool-gray hover:text-premium-gold text-sm"
+                  >Help Center</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-cool-gray hover:text-premium-gold text-sm"
+                  >Shipping</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-cool-gray hover:text-premium-gold text-sm"
+                  >Returns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="text-cool-gray hover:text-premium-gold text-sm"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-4">Contact</h4>
+            <ul class="space-y-2.5">
+              <li class="flex items-start gap-2 text-sm text-cool-gray">
+                <i class="fa-solid fa-location-dot text-premium-gold mt-1"></i
+                >Rivers State, Nigeria
+              </li>
+              <li class="flex items-center gap-2 text-sm text-cool-gray">
+                <i class="fa-solid fa-phone text-premium-gold"></i
+                ><a href="tel:08107620605" class="hover:text-white"
+                  >08107620605</a
+                >
+              </li>
+              <li class="flex items-center gap-2 text-sm text-cool-gray">
+                <i class="fa-solid fa-envelope text-premium-gold"></i
+                ><a
+                  href="mailto:Chikadibiauchechukwu@gmail.com"
+                  class="hover:text-white break-all"
+                  >Chikadibiauchechukwu@gmail.com</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-white/5 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3"
+        >
+          <p class="text-sm text-cool-gray">
+            &copy; 2026 Louis Mart. All rights reserved.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="text-xs text-cool-gray hover:text-white"
+              >Privacy</a
+            ><a href="#" class="text-xs text-cool-gray hover:text-white"
+              >Terms</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <button
+      id="backToTop"
+      class="fixed bottom-6 right-6 z-50 w-11 h-11 bg-premium-gold text-rich-black rounded-full flex items-center justify-center shadow-xl hover:bg-gold-light hover:scale-110 transition-all duration-300 opacity-0 translate-y-4 pointer-events-none"
+      aria-label="Back to top"
+    >
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+    <script>
+      function renderCartPage() {
+        const cart = JSON.parse(
+          localStorage.getItem("louis_mart_cart") || "[]",
+        );
+        const itemsEl = document.getElementById("cartPageItems");
+        const summaryEl = document.getElementById("cartSummary");
+        const emptyEl = document.getElementById("emptyCartMsg");
+        const subtotalEl = document.getElementById("cartSubtotal");
+        const totalEl = document.getElementById("cartTotal");
+        if (!cart.length) {
+          itemsEl.innerHTML = "";
+          summaryEl.classList.add("hidden");
+          emptyEl.classList.remove("hidden");
+          return;
+        }
+        emptyEl.classList.add("hidden");
+        summaryEl.classList.remove("hidden");
+        itemsEl.innerHTML = cart
+          .map(
+            (item) => `
+                <div class="flex flex-col sm:flex-row items-start gap-4 p-5 bg-white/[0.02] border border-white/[0.05] rounded-2xl">
+                    <img src="${item.image}" alt="${item.name}" class="w-20 h-20 rounded-xl object-cover" onerror="this.src='https://images.unsplash.com/photo-1552346154-21d32810aba3?w=100&q=80'">
+                    <div class="flex-1"><h3 class="text-white font-semibold">${item.name}</h3><p class="text-sm text-warm-gray">Size: ${item.size || "N/A"}</p><p class="text-premium-gold font-semibold mt-1">₦${(item.price || 0).toLocaleString()}</p></div>
+                    <div class="flex items-center gap-3"><div class="flex items-center bg-white/5 rounded-lg"><button class="px-3 py-1 text-white hover:text-premium-gold qty-dec" data-id="${item.id}">−</button><span class="px-3 py-1 text-white">${item.quantity || 1}</span><button class="px-3 py-1 text-white hover:text-premium-gold qty-inc" data-id="${item.id}">+</button></div><span class="text-white font-bold">₦${((item.price || 0) * (item.quantity || 1)).toLocaleString()}</span><button class="text-rose-400 hover:text-rose-300 remove-item" data-id="${item.id}"><i class="fa-solid fa-trash"></i></button></div>
+                </div>
+            `,
+          )
+          .join("");
+        const subtotal = cart.reduce(
+          (s, i) => s + (i.price || 0) * (i.quantity || 1),
+          0,
+        );
+        subtotalEl.textContent = `₦${subtotal.toLocaleString()}`;
+        totalEl.textContent = `₦${subtotal.toLocaleString()}`;
+        // Events
+        itemsEl.querySelectorAll(".qty-dec").forEach(
+          (b) =>
+            (b.onclick = () => {
+              const c = JSON.parse(
+                localStorage.getItem("louis_mart_cart") || "[]",
+              );
+              const i = c.find((x) => x.id === b.dataset.id);
+              if (i && i.quantity > 1) {
+                i.quantity--;
+                localStorage.setItem("louis_mart_cart", JSON.stringify(c));
+                renderCartPage();
+                updateCartCount();
+                updateCartSidebar();
+              }
+            }),
+        );
+        itemsEl.querySelectorAll(".qty-inc").forEach(
+          (b) =>
+            (b.onclick = () => {
+              const c = JSON.parse(
+                localStorage.getItem("louis_mart_cart") || "[]",
+              );
+              const i = c.find((x) => x.id === b.dataset.id);
+              if (i) {
+                i.quantity = (i.quantity || 1) + 1;
+                localStorage.setItem("louis_mart_cart", JSON.stringify(c));
+                renderCartPage();
+                updateCartCount();
+                updateCartSidebar();
+              }
+            }),
+        );
+        itemsEl.querySelectorAll(".remove-item").forEach(
+          (b) =>
+            (b.onclick = () => {
+              let c = JSON.parse(
+                localStorage.getItem("louis_mart_cart") || "[]",
+              );
+              c = c.filter((x) => x.id !== b.dataset.id);
+              localStorage.setItem("louis_mart_cart", JSON.stringify(c));
+              renderCartPage();
+              updateCartCount();
+              updateCartSidebar();
+            }),
+        );
+      }
+      function updateCartCount() {
+        const t = JSON.parse(
+          localStorage.getItem("louis_mart_cart") || "[]",
+        ).reduce((s, i) => s + (i.quantity || 0), 0);
+        document
+          .querySelectorAll(".cart-count")
+          .forEach((e) => (e.textContent = t));
+      }
+      function updateCartSidebar() {
+        const b = document.getElementById("cartSidebarBody");
+        if (!b) return;
+        const c = JSON.parse(localStorage.getItem("louis_mart_cart") || "[]");
+        if (!c.length) {
+          b.innerHTML =
+            '<div class="text-center py-10 text-cool-gray"><i class="fa-solid fa-bag-shopping text-4xl mb-3 opacity-50"></i><p>Your cart is empty</p></div>';
+          const t = document.getElementById("cartSidebarTotal");
+          if (t) t.textContent = "₦0";
+          return;
+        }
+        let h = "";
+        c.forEach((x) => {
+          h += `<div class="cart-item flex gap-3 items-start p-3 bg-white/[0.03] rounded-xl mb-2"><img src="${x.image}" class="w-16 h-16 rounded-lg object-cover"><div class="flex-1"><h4 class="text-white text-sm font-medium">${x.name}</h4><p class="text-xs text-warm-gray">Size: ${x.size || "N/A"}</p><div class="flex items-center gap-2 mt-1"><button class="w-6 h-6 bg-white/10 rounded text-xs qty-dec" data-id="${x.id}">−</button><span class="text-white text-sm">${x.quantity || 1}</span><button class="w-6 h-6 bg-white/10 rounded text-xs qty-inc" data-id="${x.id}">+</button></div></div><div class="text-right"><span class="text-premium-gold font-semibold text-sm">₦${((x.price || 0) * (x.quantity || 1)).toLocaleString()}</span><button class="block text-xs text-cool-gray hover:text-rose-400 mt-1 remove-item" data-id="${x.id}"><i class="fa-solid fa-trash"></i></button></div></div>`;
+        });
+        b.innerHTML = h;
+        document.getElementById("cartSidebarTotal").textContent =
+          `₦${c.reduce((s, x) => s + (x.price || 0) * (x.quantity || 1), 0).toLocaleString()}`;
+      }
+      renderCartPage();
+      updateCartCount();
+    </script>
+  </body>
+</html>
